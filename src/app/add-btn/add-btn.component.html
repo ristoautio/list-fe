@@ -1,0 +1,14 @@
+
+<p *ngIf="inputVisible">
+  <mat-form-field appearance="standard">
+    <mat-label>Name</mat-label>
+    <input [(ngModel)]="name" matInput autofocus (keyup.enter)="addItem()" (submit)="addItem()" placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+</p>
+
+<div class="btn-container">
+  <button mat-mini-fab *ngIf="!inputVisible" (click)="inputVisible = true">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

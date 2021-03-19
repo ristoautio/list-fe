@@ -1,0 +1,25 @@
+<mat-card>
+  <ng-container *ngIf="item.id">
+    <mat-card-header>{{item.name}}</mat-card-header>
+
+    <mat-card-content>
+      <mat-selection-list>
+
+        <ng-container *ngFor="let todo of item.items">
+          <mat-list-option *ngIf="!todo.deleted" (click)="removeItem(todo)" [value]="todo.id">
+            {{todo.name}}
+          </mat-list-option>
+          <mat-list-item *ngIf="todo.deleted" class="removed-item">
+            {{todo.name}}
+          </mat-list-item>
+        </ng-container>
+      </mat-selection-list>
+
+    </mat-card-content>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>New item</mat-label>
+      <input [autocomplete]="'off'" matInput [(ngModel)]="newItemName" (keyup.enter)="addItem()"/>
+    </mat-form-field>
+  </ng-container>
+</mat-card>

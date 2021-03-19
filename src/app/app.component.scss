@@ -1,0 +1,18 @@
+
+div {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+
+  .item {
+    margin: 1rem;
+  }
+
+  .nav {
+    flex-grow: 1;
+  }
+
+  .item-container {
+    flex-grow: 5;
+  }
+}
