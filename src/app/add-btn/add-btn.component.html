@@ -2,8 +2,7 @@
 <p *ngIf="inputVisible">
   <mat-form-field appearance="standard">
     <mat-label>Name</mat-label>
-    <input [(ngModel)]="name" matInput autofocus (keyup.enter)="addItem()" (submit)="addItem()" placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <input [(ngModel)]="name" matInput autofocus (keyup.enter)="addItem()" (submit)="addItem()" placeholder="new item">
   </mat-form-field>
 </p>
 

@@ -33,7 +33,7 @@ export class ListService {
   }
 
   selectItem = (item: any) => {
-    this.http.get<[]>(`/list/${item.id}`).subscribe((data) => {
+    this.http.get<[]>(`/lists/${item.id}`).subscribe((data) => {
       this.selectedItem = {
         id: item.id,
         name: item.name,
@@ -44,7 +44,7 @@ export class ListService {
   }
 
   addItem(id: number, name: string) {
-    const url = `/list/${id}`
+    const url = `/lists/${id}`
     this.http.post(url, {name: name})
       .subscribe(() => {
         this.selectItem(this.selectedItem)
@@ -52,7 +52,7 @@ export class ListService {
   }
 
   removeItem(todo: any) {
-    const url = `/list/${this.selectedItem.id}/${todo.id}`
+    const url = `/lists/${this.selectedItem.id}/${todo.id}`
     this.http.delete<[]>(url).subscribe((data) => {
       this.selectItem(this.selectedItem)
     })
